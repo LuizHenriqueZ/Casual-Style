@@ -1,20 +1,4 @@
-Como ficou
-
-Então em geral o modelo do banco de dados ficou assim:
-tabela Endereços, campos: IdEndereço(PK), Estado, Cidade, Bairro, Rua, Numero, Complemento, CEP e Id_Cliente(FK de clientes).
-tabela Telefones, campos: IdTelefone(PK), DDD, Numero, Tipo e Id_Cliente(FK de clientes).
-tabela Clientes, campos: IdCliente(PK), nome, cpf e email.
-tabela Pedidos, campos: IdPedido(PK), data, e Id_Cliente(FK de clientes).
-tabela Produtos, campos: IdProduto(PK), nome, Descrição, preço e tamanho.
-tabela associativa pedido e produto, campos: IdPedidoProduto(PK), Id_Produto(FK de produtos) e Id_Pedido(FK de pedidos).
-
-Relacionamentos
-Clientes e Endereços: Obrigatoriedade(1,1) e Cardinalidade(1,1)
-Clientes e Telefones: Obrigatoriedade(1,1) e Cardinalidade(1,N)
-Clientes e Pedidos: Obrigatoriedade(1,0) e Cardinalidade(1,N)
-Produtos e Pedidos: Obrigatoriedade(1,0) e Cardinalidade(N,N)
------------------------------------------------------------------------------------------------------------------------
-Nome: Casual Style
+--Nome: Casual Style
 
 CREATE DATABASE Casual_Style;
 
