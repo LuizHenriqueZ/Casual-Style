@@ -1,0 +1,84 @@
+Como ficou
+
+Então em geral o modelo do banco de dados ficou assim:
+tabela Endereços, campos: IdEndereço(PK), Estado, Cidade, Bairro, Rua, Numero, Complemento, CEP e Id_Cliente(FK de clientes).
+tabela Telefones, campos: IdTelefone(PK), DDD, Numero, Tipo e Id_Cliente(FK de clientes).
+tabela Clientes, campos: IdCliente(PK), nome, cpf e email.
+tabela Pedidos, campos: IdPedido(PK), data, e Id_Cliente(FK de clientes).
+tabela Produtos, campos: IdProduto(PK), nome, Descrição, preço e tamanho.
+tabela associativa pedido e produto, campos: IdPedidoProduto(PK), Id_Produto(FK de produtos) e Id_Pedido(FK de pedidos).
+
+Relacionamentos
+Clientes e Endereços: Obrigatoriedade(1,1) e Cardinalidade(1,1)
+Clientes e Telefones: Obrigatoriedade(1,1) e Cardinalidade(1,N)
+Clientes e Pedidos: Obrigatoriedade(1,0) e Cardinalidade(1,N)
+Produtos e Pedidos: Obrigatoriedade(1,0) e Cardinalidade(N,N)
+-----------------------------------------------------------------------------------------------------------------------
+Nome: Casual Style
+
+CREATE DATABASE Casual_Style;
+
+USE Casual_Style;
+
+CREATE TABLE Cliente(
+	IdCliente INT PRIMARY KEY AUTO_INCREMENT, 
+	Nome VARCHAR(30) NOT NULL, 
+	CPF CHAR(11) UNIQUE,
+	Email VARCHAR(30) UNIQUE
+	);
+
+CREATE TABLE Endereco(
+	IdEndereco INT PRIMARY KEY AUTO_INCREMENT, 
+	Estado CHAR(2) NOT NULL, 
+	Cidade VARCHAR(30) NOT NULL, 
+	Bairro VARCHAR(30) NOT NULL, 
+	Rua VARCHAR(50) NOT NULL, 
+	Numero VARCHAR(10) NOT NULL, 
+	Complemento VARCHAR(30), 
+	CEP CHAR(8) NOT NULL, 
+	Id_Cliente INT
+	);
+	
+	ALTER TABLE Endereco ADD CONSTRAINT FK_CLIENTE_ENDERECO
+	FOREIGN KEY(Id_Cliente) REFERENCES Cliente(IdCliente);
+			
+CREATE TABLE Telefone(
+	IdTelefone INT PRIMARY KEY AUTO_INCREMENT, 
+	DDD CHAR(2) NOT NULL, 
+	Numero VARCHAR(10) NOT NULL, 
+	Tipo ENUM('RES', 'COM', 'CEL') NOT NULL,
+	Id_Cliente INT
+	);
+	
+	ALTER TABLE Telefone ADD CONSTRAINT FK_CLIENTE_TELEFONE
+	FOREIGN KEY(Id_Cliente) REFERENCES Cliente(IdCliente);
+	
+CREATE TABLE Produto(
+	IdProduto INT PRIMARY KEY AUTO_INCREMENT, 
+	nome VARCHAR(30) NOT NULL, 
+	Descricao VARCHAR(100), 
+	preco FLOAT(10,2) NOT NULL, 
+	tamanho VARCHAR(2) NOT NULL
+	);
+			
+CREATE TABLE Pedido(
+	IdPedido INT PRIMARY KEY AUTO_INCREMENT, 
+	data DATE NOT NULL, 
+	Id_Cliente INT
+	);
+	
+	ALTER TABLE Pedido ADD CONSTRAINT FK_CLIENTE_PEDIDO
+	FOREIGN KEY(Id_Cliente) REFERENCES Cliente(IdCliente);
+	
+CREATE TABLE PedidoProduto(
+	IdPedidoProduto INT PRIMARY KEY AUTO_INCREMENT, 
+	Quantidade INT NOT NULL,
+	Id_Produto INT,
+	Id_Pedido INT
+	);
+	
+	ALTER TABLE PedidoProduto ADD CONSTRAINT FK_PRODUTO_PEDIDOPRODUTO
+	FOREIGN KEY(Id_Produto) REFERENCES Produto(IdProduto);
+	
+	ALTER TABLE PedidoProduto ADD CONSTRAINT FK_PEDIDO_PEDIDOPRODUTO 
+	FOREIGN KEY(Id_Pedido) REFERENCES Pedido(IdPedido);
