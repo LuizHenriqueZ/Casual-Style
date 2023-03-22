@@ -68,19 +68,52 @@ Onde eu já começo a usar comandos SQL para criar minhas tabelas, com seus resp
 **CLIENTE** -
 <img src="./Images/Desc_Cliente.png">
 <hr>
+
 **ENDEREÇO** -
 <img src="./Images/Desc_Endereco.png">
 <hr>
+
 **TELEFONE** -
 <img src="./Images/Desc_Telefone.png">
 <hr>
+
 **PRODUTO** -
 <img src="./Images/Desc_Produto.png">
 <hr>
+
 **PEDIDO** -
 <img src="./Images/Desc_Pedido.png">
 <hr>
+
 **TABELA ASSOCIATIVA DE PEDIDO E PRODUTO** -
 <img src="./Images/Desc_PedidoProduto.png">
 <hr>
 
+<h2>Modelagem Física do BACKUP</h2>
+Fiz um banco de dados de backup, os dados que serão inseridos nele vem de triggers que eu criei na tabela principal, apenas para UPDATE e DELETE, em update mostra todos os dados antes e depois da alteração, já o delete mostra as colunas de depois da alteração como nulas, há um campo identificador para saber qual alteração foi feita assim como também tem a hora e quem fez a alteração.
+
+**BACKUP CLIENTE** -
+<img src="./Images/Desc_BkpCliente.png">
+<hr>
+
+**BACKUP ENDEREÇO** -
+<img src="./Images/Desc_BkpEndereco.png">
+<hr>
+
+**BACKUP TELEFONE** -
+<img src="./Images/Desc_BkpTelefone.png">
+<hr>
+
+**BACKUP PRODUTO** -
+<img src="./Images/Desc_BkpProduto.png">
+<hr>
+
+**BACKUP PEDIDO** -
+<img src="./Images/Desc_BkpPedido.png">
+<hr>
+
+**BACKUP DA TABELA ASSOCIATIVA DE PEDIDO E PRODUTO** -
+<img src="./Images/Desc_BkpPedidoProduto.png">
+<hr>
+<h2>Para ver os códigos</h2>
+Todos os códigos estão na pasta code, desde os comandos de criação do banco de dados, até os triggers e as procedures.
