@@ -65,22 +65,22 @@ Produtos e Pedidos: Obrigatoriedade(1,0) e Cardinalidade(N,N)
 <h2>Modelagem Física</h2>
 Onde eu já começo a usar comandos SQL para criar minhas tabelas, com seus respectivos atributos, nessa parte eu escolhi criar a primary key junto com a tabela para usar o AUTO_INCREMENT, já a FK eu criei o atributo dela, porém só as defini depois, principalemente para deixar a constraint com um nome que eu escolhi.
 
-Cliente -
+**CLIENTE** -
 <img src="./Images/Desc_Cliente.png">
 <hr>
-Endereço -
+**ENDEREÇO** -
 <img src="./Images/Desc_Endereco.png">
 <hr>
-Telefone -
+**TELEFONE** -
 <img src="./Images/Desc_Telefone.png">
 <hr>
-Produto -
+**PRODUTO** -
 <img src="./Images/Desc_Produto.png">
 <hr>
-Pedido -
+**PEDIDO** -
 <img src="./Images/Desc_Pedido.png">
 <hr>
-Tabela associativa de Pedido e Produto -
+**TABELA ASSOCIATIVA DE PEDIDO E PRODUTO** -
 <img src="./Images/Desc_PedidoProduto.png">
 <hr>
 
