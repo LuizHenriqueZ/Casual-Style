@@ -5,6 +5,9 @@ Nesse projeto eu a partir de uma ideia, montei o modelo lógico e físico, fiz u
 
 Então vamos começar minha jornada nesse projeto.
 
+<h2>Codificação e Comandos</h2>
+Toda a codificação esta na pasta code, desde os comandos de criação do banco de dados, até os triggers e as procedures.
+
 <h2>Informações do projeto</h2>
 
 Nome do projeto: Casual Style
@@ -115,5 +118,4 @@ Fiz um banco de dados de backup, os dados que serão inseridos nele vem de trigg
 **BACKUP DA TABELA ASSOCIATIVA DE PEDIDO E PRODUTO** -
 <img src="./Images/Desc_BkpPedidoProduto.png">
 <hr>
-<h2>Para ver os códigos</h2>
-Todos os códigos estão na pasta code, desde os comandos de criação do banco de dados, até os triggers e as procedures.
+
