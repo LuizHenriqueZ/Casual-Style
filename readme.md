@@ -66,11 +66,21 @@ Produtos e Pedidos: Obrigatoriedade(1,0) e Cardinalidade(N,N)
 Onde eu já começo a usar comandos SQL para criar minhas tabelas, com seus respectivos atributos, nessa parte eu escolhi criar a primary key junto com a tabela para usar o AUTO_INCREMENT, já a FK eu criei o atributo dela, porém só as defini depois, principalemente para deixar a constraint com um nome que eu escolhi.
 
 Cliente -
-+-----------+-------------+------+-----+---------+----------------+
-| Field     | Type        | Null | Key | Default | Extra          |
-+-----------+-------------+------+-----+---------+----------------+
-| IdCliente | int         | NO   | PRI | NULL    | auto_increment |
-| Nome      | varchar(30) | NO   |     | NULL    |                |
-| CPF       | char(11)    | YES  | UNI | NULL    |                |
-| Email     | varchar(30) | YES  | UNI | NULL    |                |
-+-----------+-------------+------+-----+---------+----------------+
+<img src="./Images/Desc_Cliente.png">
+<hr>
+Endereço -
+<img src="./Images/Desc_Endereco.png">
+<hr>
+Telefone -
+<img src="./Images/Desc_Telefone.png">
+<hr>
+Produto -
+<img src="./Images/Desc_Produto.png">
+<hr>
+Pedido -
+<img src="./Images/Desc_Pedido.png">
+<hr>
+Tabela associativa de Pedido e Produto -
+<img src="./Images/Desc_PedidoProduto.png">
+<hr>
+
